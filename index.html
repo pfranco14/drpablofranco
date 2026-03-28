@@ -20,8 +20,8 @@ color:white;
 /* NAV */
 .nav{
 position:fixed;
-top:0;
 width:100%;
+top:0;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -31,25 +31,18 @@ backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-.logo img{
-height:60px;
-}
+.logo img{height:60px;}
 
-.menu{
-font-size:26px;
-cursor:pointer;
-}
+.menu{font-size:26px;cursor:pointer;}
 
-/* MENU */
 .dropdown{
 position:absolute;
 top:70px;
-right:25px;
+right:20px;
 background:#111;
-padding:20px;
+padding:15px;
 border-radius:12px;
 display:none;
-width:180px;
 }
 
 .dropdown a{
@@ -57,13 +50,15 @@ display:block;
 padding:10px;
 color:white;
 text-decoration:none;
-border-bottom:1px solid #222;
 }
 
 /* HERO */
 .hero{
 height:100vh;
-background:url('https://images.unsplash.com/photo-1606813907291-d86efa9b94db') center/cover;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1606813907291-d86efa9b94db');
+background-size:cover;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -71,17 +66,14 @@ align-items:center;
 text-align:center;
 }
 
-.hero img{
-width:180px;
-margin-bottom:15px;
-}
+.hero img{width:180px;margin-bottom:10px;}
 
 .hero h1{
-font-family:'Playfair Display',serif;
-font-size:22px;
-letter-spacing:1px;
+font-family:'Playfair Display';
+font-size:20px;
 }
 
+/* BOTON */
 .btn{
 background:#d4af37;
 color:black;
@@ -93,7 +85,7 @@ text-decoration:none;
 
 /* SECCIONES */
 section{
-padding:100px 20px;
+padding:90px 20px;
 max-width:1200px;
 margin:auto;
 opacity:0;
@@ -101,60 +93,59 @@ transform:translateY(40px);
 transition:1s;
 }
 
+.show{opacity:1;transform:translateY(0);}
+
 h2{
 text-align:center;
 color:#d4af37;
 margin-bottom:40px;
-font-family:'Playfair Display',serif;
+font-family:'Playfair Display';
 }
 
 /* PROMO */
 .promo{
-background:#111;
-padding:25px;
-text-align:center;
 border-radius:15px;
+overflow:hidden;
 cursor:pointer;
-transition:.3s;
-}
-.promo:hover{transform:scale(1.03);}
-
-/* PILARES */
-.pilares{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
 }
 
-.pilar{
-background:#111;
-padding:25px;
-border-radius:15px;
+.promo img{
+width:100%;
+height:250px;
+object-fit:cover;
+filter:brightness(60%);
+}
+
+.promo-text{
+position:relative;
+margin-top:-120px;
 text-align:center;
+font-size:20px;
 }
 
 /* SERVICIOS */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 }
 
 .card{
-background:#111;
 border-radius:15px;
 overflow:hidden;
-transition:.3s;
+background:#111;
 }
-.card:hover{transform:translateY(-5px);}
 
 .card img{
 width:100%;
 height:200px;
 object-fit:cover;
+filter:brightness(70%);
 }
 
-.card-content{padding:15px;}
+.card-content{
+padding:15px;
+}
 
 .card-content a{
 color:#d4af37;
@@ -162,10 +153,10 @@ text-decoration:none;
 }
 
 /* GALERIA */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
+.gallery img{
+width:100%;
+border-radius:10px;
+filter:brightness(80%);
 }
 
 /* REDES */
@@ -174,6 +165,11 @@ display:flex;
 justify-content:center;
 gap:20px;
 margin-top:20px;
+}
+
+.redes svg{
+width:28px;
+fill:white;
 }
 
 /* FOOTER */
@@ -196,14 +192,8 @@ display:flex;
 justify-content:center;
 align-items:center;
 font-size:28px;
-color:white;
 box-shadow:0 5px 20px rgba(0,0,0,0.5);
-}
-
-/* ANIMACION */
-.show{
-opacity:1 !important;
-transform:translateY(0) !important;
+color:white;
 }
 </style>
 
@@ -226,11 +216,8 @@ sec.classList.add("show");
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
-<div class="logo">
-<img src="logo.png">
-</div>
+<div class="logo"><img src="logo.png"></div>
 
 <div class="menu" onclick="toggleMenu()">☰</div>
 
@@ -241,92 +228,72 @@ sec.classList.add("show");
 </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
 <img src="logo.png">
 <h1>Haz de tu sonrisa tu mejor accesorio</h1>
 <a class="btn" href="https://wa.me/51914628067">Agendar cita</a>
 </div>
 
-<!-- PROMO -->
 <section>
 <h2>Promoción</h2>
-<a href="promo.html">
-<div class="promo">Limpieza dental S/100</div>
-</a>
-</section>
-
-<!-- PILARES -->
-<section>
-<h2>¿Por qué elegirnos?</h2>
-<div class="pilares">
-<div class="pilar">Equipos de última generación</div>
-<div class="pilar">Atención personalizada</div>
-<div class="pilar">Protocolos de bioseguridad</div>
+<div class="promo">
+<img src="https://images.unsplash.com/photo-1588776814546-ec7e6d1c2c26">
+<div class="promo-text">Limpieza dental S/100</div>
 </div>
 </section>
 
-<!-- SERVICIOS -->
 <section id="servicios">
 <h2>Servicios</h2>
 
 <div class="grid">
 
 <div class="card">
-<img src="https://via.placeholder.com/400">
+<img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db">
 <div class="card-content">
 <h3>Rehabilitación Oral</h3>
-<a href="servicio.html">Ver más</a>
+<a href="#">Ver más</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/400">
+<img src="https://images.unsplash.com/photo-1588776814546-ec7e6d1c2c26">
 <div class="card-content">
-<h3>Estética Dental</h3>
-<a href="servicio.html">Ver más</a>
+<h3>Odontología Estética</h3>
+<a href="#">Ver más</a>
 </div>
 </div>
 
 <div class="card">
-<img src="https://via.placeholder.com/400">
+<img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09">
 <div class="card-content">
-<h3>Implantes</h3>
-<a href="servicio.html">Ver más</a>
+<h3>Endodoncia Rotatoria</h3>
+<a href="#">Ver más</a>
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- RESULTADOS -->
 <section id="resultados">
 <h2>Resultados reales</h2>
 
-<div class="gallery">
-<img src="https://via.placeholder.com/400">
-<img src="https://via.placeholder.com/400">
-<img src="https://via.placeholder.com/400">
+<div class="grid gallery">
+<img src="https://images.unsplash.com/photo-1598257006458-087169a1f08d">
+<img src="https://images.unsplash.com/photo-1609840112855-9f5c8b3f87cb">
 </div>
 
 </section>
 
-<!-- CONTACTO -->
 <section id="contacto">
 <h2>Contacto</h2>
 
-<p>
-<a href="https://share.google/XAjQo6hNNfzX5Vtme" target="_blank">
-📍 Calle Santa Marta 411, Segundo Piso - Arequipa, Perú
-</a>
-</p>
-
+<p>📍 Calle Santa Marta 411, Segundo Piso - Arequipa, Perú</p>
 <p>📲 +51 914 628 067</p>
 
 <div class="redes">
-<a href="https://www.instagram.com/doctorpablofranco">Instagram</a>
-<a href="https://www.tiktok.com/@doctor.pablofranco">TikTok</a>
-<a href="https://www.facebook.com/profile.php?id=61569962007429">Facebook</a>
+<a href="https://www.instagram.com/doctorpablofranco"><svg viewBox="0 0 24 24"><path d="M7 2C4 2 2 4 2 7v10c0 3 2 5 5 5h10c3 0 5-2 5-5V7c0-3-2-5-5-5H7z"/></svg></a>
+<a href="https://www.tiktok.com/@doctor.pablofranco"><svg viewBox="0 0 24 24"><path d="M12 2h3a5 5 0 005 5v3"/></svg></a>
+<a href="https://www.facebook.com/profile.php?id=61569962007429"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11 9.9"/></svg></a>
 </div>
 
 </section>
@@ -335,10 +302,6 @@ sec.classList.add("show");
 <p>© Dr. Pablo Franco</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/51914628067">💬</a>
-
-</body>
-</html>
 <a class="whatsapp" href="https://wa.me/51914628067">💬</a>
 
 </body>
