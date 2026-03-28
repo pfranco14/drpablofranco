@@ -3,45 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Dr. Pablo Franco</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-background:#0b0b0b;
+font-family:'Poppins',sans-serif;
+background:#0a0a0a;
 color:white;
+scroll-behavior:smooth;
 }
 
 /* NAV */
-nav{
+.nav{
 position:fixed;
 width:100%;
 top:0;
-left:0;
 display:flex;
 justify-content:space-between;
 padding:20px;
 background:rgba(0,0,0,0.6);
-backdrop-filter: blur(10px);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-nav a{
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+/* espacio logo */
+.logo img{
+height:40px;
+}
+
+/* MENU */
+.menu{
+font-size:28px;
+cursor:pointer;
+}
+
+.dropdown{
+display:none;
+position:absolute;
+top:70px;
+right:20px;
+background:#111;
+padding:20px;
+border-radius:10px;
+}
+
+.dropdown a{
+display:block;
 color:white;
-margin:0 10px;
 text-decoration:none;
+margin:10px 0;
 }
 
 /* HERO */
 .hero{
 height:100vh;
-background:url('https://images.unsplash.com/photo-1588776814546-ec7e6d1c2c26') center/cover;
+background:url('https://via.placeholder.com/1500') center/cover;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+animation:fadeIn 2s;
 }
 
 .hero h1{
@@ -54,19 +86,20 @@ background:#d4af37;
 color:black;
 padding:12px 25px;
 text-decoration:none;
-margin-top:15px;
+margin-top:20px;
 }
 
-/* SECCIONES */
+/* SECTIONS */
 section{
 padding:80px 20px;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 }
 
 h2{
 color:#d4af37;
 text-align:center;
+margin-bottom:40px;
 }
 
 /* GRID */
@@ -78,16 +111,26 @@ gap:20px;
 
 .card{
 background:#1a1a1a;
-padding:20px;
-border-radius:10px;
+border-radius:15px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card img{
 width:100%;
-border-radius:10px;
+height:200px;
+object-fit:cover;
 }
 
-/* RESULTADOS */
+.card h3{
+padding:15px;
+}
+
+/* GALERIA */
 .gallery img{
 width:100%;
 border-radius:10px;
@@ -97,10 +140,20 @@ border-radius:10px;
 footer{
 background:#000;
 padding:40px;
-text-align:center;
 }
 
-/* WHATSAPP */
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+a{
+color:#d4af37;
+text-decoration:none;
+}
+
+/* WhatsApp */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -108,24 +161,41 @@ right:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
-color:white;
-text-decoration:none;
+}
+
+/* ANIMACION */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
 }
 </style>
+
+<script>
+function toggleMenu(){
+let menu=document.getElementById("menu");
+menu.style.display = menu.style.display==="block"?"none":"block";
+}
+</script>
 
 </head>
 
 <body>
 
 <!-- NAV -->
-<nav>
-<div>Dr. Pablo Franco</div>
-<div>
+<div class="nav">
+<div class="logo">
+<img src="logo.png"> <!-- TU LOGO -->
+<span>Dr. Pablo Franco</span>
+</div>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<div class="dropdown" id="menu">
 <a href="#servicios">Servicios</a>
 <a href="#resultados">Resultados</a>
-<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
 </div>
-</nav>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -133,39 +203,69 @@ text-decoration:none;
 <a class="btn" href="https://wa.me/51914628067">Agendar cita</a>
 </div>
 
+<!-- PROMOCION -->
+<section>
+<h2>Promoción</h2>
+<p style="text-align:center;">Limpieza dental S/100</p>
+</section>
+
 <!-- SERVICIOS -->
 <section id="servicios">
 <h2>Servicios</h2>
 
 <div class="grid">
 
+<!-- COPIA ESTE BLOQUE -->
 <div class="card">
+<a href="servicio.html">
 <img src="https://via.placeholder.com/400">
-<h3>Limpieza dental</h3>
-<p>Eliminación de sarro y manchas.</p>
+<h3>Rehabilitación Oral</h3>
+</a>
 </div>
 
 <div class="card">
+<a href="servicio.html">
+<img src="https://via.placeholder.com/400">
+<h3>Odontología Estética</h3>
+</a>
+</div>
+
+<div class="card">
+<a href="servicio.html">
+<img src="https://via.placeholder.com/400">
+<h3>Cirugía Bucal</h3>
+</a>
+</div>
+
+<div class="card">
+<a href="servicio.html">
+<img src="https://via.placeholder.com/400">
+<h3>Implantes</h3>
+</a>
+</div>
+
+<div class="card">
+<a href="servicio.html">
 <img src="https://via.placeholder.com/400">
 <h3>Endodoncia</h3>
-<p>Tratamiento de conducto sin dolor.</p>
+</a>
 </div>
 
 <div class="card">
+<a href="servicio.html">
 <img src="https://via.placeholder.com/400">
-<h3>Estética dental</h3>
-<p>Diseño de sonrisa y blanqueamiento.</p>
+<h3>Ortodoncia</h3>
+</a>
+</div>
+
+<div class="card">
+<a href="servicio.html">
+<img src="https://via.placeholder.com/400">
+<h3>Odontopediatría</h3>
+</a>
 </div>
 
 </div>
-</section>
-
-<!-- EXPERIENCIA -->
-<section id="nosotros">
-<h2>Experiencia</h2>
-<p style="text-align:center;">
-Equipos de última generación, atención personalizada y tecnología moderna para resultados de alto nivel.
-</p>
 </section>
 
 <!-- RESULTADOS -->
@@ -176,20 +276,56 @@ Equipos de última generación, atención personalizada y tecnología moderna pa
 <img src="https://via.placeholder.com/400">
 <img src="https://via.placeholder.com/400">
 <img src="https://via.placeholder.com/400">
+<img src="https://via.placeholder.com/400">
 </div>
 
 </section>
 
 <!-- CONTACTO -->
-<footer>
-<p>📍 Arequipa, Perú</p>
+<section id="contacto">
+<h2>Contacto</h2>
+
+<p>📍 
+<a href="https://share.google/XAjQo6hNNfzX5Vtme" target="_blank">
+Ver ubicación en Google Maps
+</a>
+</p>
+
 <p>📲 +51 914 628 067</p>
 
 <p>
-Facebook | Instagram | TikTok
+<a href="https://linktr.ee/DoctorPabloFranco" target="_blank">
+Ver redes sociales
+</a>
 </p>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>Navegación</h3>
+<p><a href="#servicios">Servicios</a></p>
+<p><a href="#resultados">Resultados</a></p>
+</div>
+
+<div>
+<h3>Legal</h3>
+<p>Términos y condiciones</p>
+<p>Privacidad</p>
+</div>
+
+</div>
+
 </footer>
 
+<a class="whatsapp" href="https://wa.me/51914628067">💬</a>
+
+</body>
+</html>
 <a class="whatsapp" href="https://wa.me/51914628067">💬</a>
 
 </body>
