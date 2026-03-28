@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Dr. Pablo Franco</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,18 +13,18 @@ margin:0;
 font-family:'Poppins',sans-serif;
 background:#0a0a0a;
 color:white;
-scroll-behavior:smooth;
 }
 
 /* NAV */
 .nav{
 position:fixed;
-width:100%;
 top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
-padding:20px;
-background:rgba(0,0,0,0.6);
+align-items:center;
+padding:15px 20px;
+background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
@@ -36,12 +35,10 @@ align-items:center;
 gap:10px;
 }
 
-/* espacio logo */
 .logo img{
-height:40px;
+height:50px;
 }
 
-/* MENU */
 .menu{
 font-size:28px;
 cursor:pointer;
@@ -50,18 +47,19 @@ cursor:pointer;
 .dropdown{
 display:none;
 position:absolute;
-top:70px;
+top:60px;
 right:20px;
 background:#111;
-padding:20px;
+padding:15px;
 border-radius:10px;
+width:150px;
 }
 
 .dropdown a{
 display:block;
 color:white;
-text-decoration:none;
 margin:10px 0;
+text-decoration:none;
 }
 
 /* HERO */
@@ -73,23 +71,27 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-animation:fadeIn 2s;
 }
 
 .hero h1{
-font-size:50px;
-color:#d4af37;
+font-size:20px;
+font-weight:300;
+}
+
+.hero img{
+width:150px;
+margin-bottom:10px;
 }
 
 .btn{
 background:#d4af37;
 color:black;
 padding:12px 25px;
-text-decoration:none;
 margin-top:20px;
+text-decoration:none;
 }
 
-/* SECTIONS */
+/* SECCIONES */
 section{
 padding:80px 20px;
 max-width:1200px;
@@ -99,7 +101,15 @@ margin:auto;
 h2{
 color:#d4af37;
 text-align:center;
-margin-bottom:40px;
+}
+
+/* PROMO */
+.promo{
+background:#111;
+padding:20px;
+text-align:center;
+border-radius:10px;
+cursor:pointer;
 }
 
 /* GRID */
@@ -126,47 +136,40 @@ height:200px;
 object-fit:cover;
 }
 
-.card h3{
-padding:15px;
-}
-
-/* GALERIA */
-.gallery img{
-width:100%;
-border-radius:10px;
-}
-
 /* FOOTER */
 footer{
 background:#000;
 padding:40px;
+text-align:center;
 }
 
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+/* REDES */
+.redes a{
+margin:0 10px;
+font-size:22px;
 }
 
-a{
-color:#d4af37;
-text-decoration:none;
-}
-
-/* WhatsApp */
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-padding:15px;
-border-radius:50%;
+padding:12px 18px;
+border-radius:50px;
+display:flex;
+align-items:center;
+gap:10px;
+color:white;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* ANIMACION */
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
+section{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
 }
 </style>
 
@@ -175,6 +178,16 @@ function toggleMenu(){
 let menu=document.getElementById("menu");
 menu.style.display = menu.style.display==="block"?"none":"block";
 }
+
+window.addEventListener("scroll",()=>{
+document.querySelectorAll("section").forEach(sec=>{
+let top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.style.opacity=1;
+sec.style.transform="translateY(0)";
+}
+});
+});
 </script>
 
 </head>
@@ -184,7 +197,7 @@ menu.style.display = menu.style.display==="block"?"none":"block";
 <!-- NAV -->
 <div class="nav">
 <div class="logo">
-<img src="logo.png"> <!-- TU LOGO -->
+<img src="logo.png">
 <span>Dr. Pablo Franco</span>
 </div>
 
@@ -199,14 +212,25 @@ menu.style.display = menu.style.display==="block"?"none":"block";
 
 <!-- HERO -->
 <div class="hero">
+
+<img src="logo.png">
+
 <h1>Haz de tu sonrisa tu mejor accesorio</h1>
+
 <a class="btn" href="https://wa.me/51914628067">Agendar cita</a>
+
 </div>
 
 <!-- PROMOCION -->
 <section>
 <h2>Promoción</h2>
-<p style="text-align:center;">Limpieza dental S/100</p>
+
+<a href="promo.html">
+<div class="promo">
+Limpieza dental S/100 (click para más info)
+</div>
+</a>
+
 </section>
 
 <!-- SERVICIOS -->
@@ -215,65 +239,23 @@ menu.style.display = menu.style.display==="block"?"none":"block";
 
 <div class="grid">
 
-<!-- COPIA ESTE BLOQUE -->
-<div class="card">
-<a href="servicio.html">
-<img src="https://via.placeholder.com/400">
-<h3>Rehabilitación Oral</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="servicio.html">
-<img src="https://via.placeholder.com/400">
-<h3>Odontología Estética</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="servicio.html">
-<img src="https://via.placeholder.com/400">
-<h3>Cirugía Bucal</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="servicio.html">
-<img src="https://via.placeholder.com/400">
-<h3>Implantes</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="servicio.html">
-<img src="https://via.placeholder.com/400">
-<h3>Endodoncia</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="servicio.html">
-<img src="https://via.placeholder.com/400">
-<h3>Ortodoncia</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="servicio.html">
-<img src="https://via.placeholder.com/400">
-<h3>Odontopediatría</h3>
-</a>
-</div>
+<div class="card"><img src="https://via.placeholder.com/400"><h3>Rehabilitación Oral</h3></div>
+<div class="card"><img src="https://via.placeholder.com/400"><h3>Odontología Estética</h3></div>
+<div class="card"><img src="https://via.placeholder.com/400"><h3>Cirugía Bucal</h3></div>
+<div class="card"><img src="https://via.placeholder.com/400"><h3>Implantes</h3></div>
+<div class="card"><img src="https://via.placeholder.com/400"><h3>Endodoncia</h3></div>
+<div class="card"><img src="https://via.placeholder.com/400"><h3>Ortodoncia</h3></div>
+<div class="card"><img src="https://via.placeholder.com/400"><h3>Odontopediatría</h3></div>
 
 </div>
+
 </section>
 
 <!-- RESULTADOS -->
 <section id="resultados">
 <h2>Resultados reales</h2>
 
-<div class="grid gallery">
-<img src="https://via.placeholder.com/400">
+<div class="grid">
 <img src="https://via.placeholder.com/400">
 <img src="https://via.placeholder.com/400">
 <img src="https://via.placeholder.com/400">
@@ -285,48 +267,36 @@ menu.style.display = menu.style.display==="block"?"none":"block";
 <section id="contacto">
 <h2>Contacto</h2>
 
-<p>📍 
+<p>
 <a href="https://share.google/XAjQo6hNNfzX5Vtme" target="_blank">
-Ver ubicación en Google Maps
+📍 Arequipa, Perú - Ver ubicación
 </a>
 </p>
 
 <p>📲 +51 914 628 067</p>
 
-<p>
-<a href="https://linktr.ee/DoctorPabloFranco" target="_blank">
-Ver redes sociales
-</a>
-</p>
+<div class="redes">
+<a href="https://linktr.ee/DoctorPabloFranco" target="_blank">🌐</a>
+<a href="https://linktr.ee/DoctorPabloFranco" target="_blank">📸</a>
+<a href="https://linktr.ee/DoctorPabloFranco" target="_blank">🎵</a>
+</div>
 
 </section>
 
-<!-- FOOTER -->
 <footer>
 
-<div class="footer-grid">
+<p>© Dr. Pablo Franco</p>
 
-<div>
-<h3>Navegación</h3>
-<p><a href="#servicios">Servicios</a></p>
-<p><a href="#resultados">Resultados</a></p>
-</div>
-
-<div>
-<h3>Legal</h3>
-<p>Términos y condiciones</p>
-<p>Privacidad</p>
-</div>
-
-</div>
+<p>
+<a href="#">Términos</a> | 
+<a href="#">Privacidad</a>
+</p>
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/51914628067">💬</a>
-
-</body>
-</html>
-<a class="whatsapp" href="https://wa.me/51914628067">💬</a>
+<a class="whatsapp" href="https://wa.me/51914628067">
+💬 <span>Agenda tu cita</span>
+</a>
 
 </body>
 </html>
