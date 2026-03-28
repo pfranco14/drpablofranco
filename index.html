@@ -1,168 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Pablo Franco</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<div class="card">
+<img src="imagenes/endo.jpg">
+<h3>Endodoncia</h3>
+<p>Tratamiento de conducto sin dolor para salvar tu diente.</p>
+</div>
 
-<style>
-body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:#0a0a0a;
-    color:white;
-}
+<div class="card">
+<img src="imagenes/estetica.jpg">
+<h3>Estética dental</h3>
+<p>Diseño de sonrisa, resinas y blanqueamiento.</p>
+</div>
 
-header{
-    height:100vh;
-    background:url('https://images.unsplash.com/photo-1588776814546-ec7e6d1c2c26') center/cover;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-header h1{
-    font-size:50px;
-    color:#d4af37;
-}
-
-header p{
-    max-width:600px;
-}
-
-.btn{
-    background:#d4af37;
-    color:black;
-    padding:15px 30px;
-    text-decoration:none;
-    margin-top:20px;
-    font-weight:bold;
-}
-
-section{
-    padding:60px 20px;
-    max-width:1100px;
-    margin:auto;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:#1a1a1a;
-    padding:20px;
-    border-radius:10px;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-img{
-    width:100%;
-    border-radius:10px;
-}
-
-h2{
-    color:#d4af37;
-}
-
-/* WhatsApp */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    padding:15px;
-    border-radius:50%;
-    color:white;
-    font-size:22px;
-    text-decoration:none;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>Dr. Pablo Franco</h1>
-    <p>Odontología estética y rehabilitación con resultados de alto nivel</p>
-    <a class="btn" href="https://wa.me/51914628067">Agendar cita</a>
-</header>
-
-<section>
-    <h2>Sobre el consultorio</h2>
-    <p>Atención personalizada con tecnología moderna y enfoque en estética dental. Cada tratamiento está diseñado para lograr resultados naturales y duraderos.</p>
+</div>
 </section>
 
-<section>
-    <h2>Promociones</h2>
+<section id="nosotros">
+<h2>Nosotros</h2>
+<p>Atención personalizada, tecnología moderna y resultados de alto nivel.</p>
+</section>
 
-    <!-- EDITABLE -->
-    <div class="card">
-        <h3>Limpieza dental</h3>
-        <p>S/100 - Promoción especial</p>
-    </div>
+<section id="resultados">
+<h2>Resultados reales</h2>
+
+<div class="grid">
+<img src="imagenes/caso1.jpg">
+<img src="imagenes/caso2.jpg">
+</div>
 
 </section>
 
 <section>
-    <h2>Servicios</h2>
-    <div class="grid">
+<h2>Reels</h2>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db">
-            <h3>Limpieza dental</h3>
-            <p>Profilaxis profesional y eliminación de sarro</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1588776814546-ec7e6d1c2c26">
-            <h3>Endodoncia</h3>
-            <p>Tratamiento de conducto sin dolor</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1598257006458-087169a1f08d">
-            <h3>Estética dental</h3>
-            <p>Resinas, blanqueamiento y diseño de sonrisa</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09">
-            <h3>Rehabilitación oral</h3>
-            <p>Coronas, prótesis e incrustaciones</p>
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <h2>Testimonios</h2>
-
-    <div class="card">
-        <p>"Excelente atención, resultados increíbles."</p>
-    </div>
-
-    <div class="card">
-        <p>"Muy profesional, totalmente recomendado."</p>
-    </div>
+<video width="100%" controls>
+<source src="imagenes/video1.mp4">
+</video>
 
 </section>
 
-<section>
-    <h2>Contacto</h2>
-    <p>📍 Calle Santa Marta 411, Segundo Piso</p>
-    <p>📲 +51 914 628 067</p>
-</section>
+<footer>
+
+<p>📍 Arequipa, Perú</p>
+<p>📲 +51 914 628 067</p>
+
+<p>
+<a href="#">Facebook</a> |
+<a href="#">Instagram</a> |
+<a href="#">TikTok</a>
+</p>
+
+</footer>
 
 <a class="whatsapp" href="https://wa.me/51914628067">💬</a>
 
