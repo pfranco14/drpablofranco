@@ -1,54 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Pablo Franco</title>
+
+<style>
+body{
+margin:0;
+font-family: 'Segoe UI', sans-serif;
+background:#0b0b0b;
+color:white;
+}
+
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:rgba(0,0,0,0.6);
+backdrop-filter: blur(10px);
+z-index:1000;
+}
+
+nav a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1588776814546-ec7e6d1c2c26') center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:50px;
+color:#d4af37;
+}
+
+.btn{
+background:#d4af37;
+color:black;
+padding:12px 25px;
+text-decoration:none;
+margin-top:15px;
+}
+
+/* SECCIONES */
+section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+color:#d4af37;
+text-align:center;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1a1a1a;
+padding:20px;
+border-radius:10px;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+/* RESULTADOS */
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+/* FOOTER */
+footer{
+background:#000;
+padding:40px;
+text-align:center;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+color:white;
+text-decoration:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<div>Dr. Pablo Franco</div>
+<div>
+<a href="#servicios">Servicios</a>
+<a href="#resultados">Resultados</a>
+<a href="#nosotros">Nosotros</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Haz de tu sonrisa tu mejor accesorio</h1>
+<a class="btn" href="https://wa.me/51914628067">Agendar cita</a>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+<h2>Servicios</h2>
+
+<div class="grid">
 
 <div class="card">
-<img src="imagenes/endo.jpg">
+<img src="https://via.placeholder.com/400">
+<h3>Limpieza dental</h3>
+<p>Eliminación de sarro y manchas.</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/400">
 <h3>Endodoncia</h3>
-<p>Tratamiento de conducto sin dolor para salvar tu diente.</p>
+<p>Tratamiento de conducto sin dolor.</p>
 </div>
 
 <div class="card">
-<img src="imagenes/estetica.jpg">
+<img src="https://via.placeholder.com/400">
 <h3>Estética dental</h3>
-<p>Diseño de sonrisa, resinas y blanqueamiento.</p>
+<p>Diseño de sonrisa y blanqueamiento.</p>
 </div>
 
 </div>
 </section>
 
+<!-- EXPERIENCIA -->
 <section id="nosotros">
-<h2>Nosotros</h2>
-<p>Atención personalizada, tecnología moderna y resultados de alto nivel.</p>
+<h2>Experiencia</h2>
+<p style="text-align:center;">
+Equipos de última generación, atención personalizada y tecnología moderna para resultados de alto nivel.
+</p>
 </section>
 
+<!-- RESULTADOS -->
 <section id="resultados">
 <h2>Resultados reales</h2>
 
-<div class="grid">
-<img src="imagenes/caso1.jpg">
-<img src="imagenes/caso2.jpg">
+<div class="grid gallery">
+<img src="https://via.placeholder.com/400">
+<img src="https://via.placeholder.com/400">
+<img src="https://via.placeholder.com/400">
 </div>
 
 </section>
 
-<section>
-<h2>Reels</h2>
-
-<video width="100%" controls>
-<source src="imagenes/video1.mp4">
-</video>
-
-</section>
-
+<!-- CONTACTO -->
 <footer>
-
 <p>📍 Arequipa, Perú</p>
 <p>📲 +51 914 628 067</p>
 
 <p>
-<a href="#">Facebook</a> |
-<a href="#">Instagram</a> |
-<a href="#">TikTok</a>
+Facebook | Instagram | TikTok
 </p>
-
 </footer>
 
 <a class="whatsapp" href="https://wa.me/51914628067">💬</a>
